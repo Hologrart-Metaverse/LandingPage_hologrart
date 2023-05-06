@@ -32,7 +32,9 @@ const Contact = ({ isMobile }) => {
 
   const handleSubmit = async (message) => {
     setLoader(true);
-    const { data } = api.sendMessage(message);
+    
+    api.sendMessage(message);
+
     setIsSend(true);
     setLoader(false);
   }
@@ -64,6 +66,10 @@ const MainHero = ({ isMobile }) => {
   const description = ["Hologrart Fashion Collection! 💓", "Brand New Genesis Collection"];
   let lengthOfDescs = description.length;
   const [index, setIndex] = useState(0);
+
+  const [email, setEmail] = useState("");
+  const [loader, setLoader] = useState(false);
+  const [isSend, setIsSend] = useState(false);
   
   useEffect(() => {
     
@@ -78,6 +84,20 @@ const MainHero = ({ isMobile }) => {
     
     return () => clearInterval(slider);
   }, [index, lengthOfDescs]);
+
+  const submit = async (email) => {
+    setLoader(true);
+    
+    api.sendEmail(email);
+
+    setIsSend(true);
+    setLoader(false);
+    setEmail("");
+
+    setTimeout(() => {
+      setIsSend(false);
+    }, 2000);
+  }
 
   return (
     <div className={`${isMobile ? "row-span-3" : "col-span-6"} grid grid-rows-10`}>
@@ -103,8 +123,16 @@ const MainHero = ({ isMobile }) => {
       </div>
 
       <div className='row-span-2 flex justify-between items-center px-5'>
-        <input type="text" className='text-black p-2 rounded-lg w-full sm:text-md text-sm' placeholder='Insert your email address for playing demo...' />
-        <button className='font-extrabold sm:text-md text-sm italic px-0 sm:px-4 py-2 bg-[#9320D9] rounded-lg ml-2 min-w-[150px] shadow-md shadow-purple-500'>Join Waitlist</button>
+        <input type="text" className='text-black p-2 rounded-lg w-full sm:text-md text-sm' placeholder='Insert your email address for playing demo...' value={email} onChange={e => {
+          setEmail(e.target.value);
+          setIsSend(false);
+        }} />
+        <button onClick={() => !isSend && !loader ? submit(email) : null} className={`font-extrabold sm:text-md text-sm italic px-0 sm:px-4 py-2 rounded-lg ml-2 min-w-[150px] shadow-md ${isSend ? "bg-[#51d920] shadow-green-500" : "bg-[#9320D9] shadow-purple-500"}`}>
+          {
+            isSend ? "Done!" : loader ? (<ClipLoader color={`#ffffff`} loading={loader} size={10} aria-label="Loading Spinner" data-testid="loader" />) : "Join Waitlist"
+          }  
+          
+        </button>
       </div>
     </div>
   )
