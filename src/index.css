@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: #250D31;
+
+  overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.bgBlur {
+  background-color: rgba(37, 13, 49, 0.09);
+  backdrop-filter: blur(10px);
+  position: absolute;
+  z-index: 10;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.vectors {
+  border: 30px solid #9050B7;
+  
+}
+.vector1 {
+  width: 180vw;
+  height: 350vh;
+  border-radius: 0px 100% 0px 0px;
+  position: absolute;
+  border-color: #9050B7 #9050B7 transparent transparent;
+
+  left: -45vw;
+  top: 0vh;
+}
+
+.vector2 {
+  width: 50vw;
+  height: 130vh;
+  border-radius: 0px 0px 100% 0px;
+  position: absolute;
+  border-color: transparent #9050B7 #9050B7 transparent;
+  left: -10vw;
+  top: -90vh;
+}
+
+.vector3 {
+  width: 200vw;
+  height: 400vh;
+  border-radius: 100% 0px 0px 0px;
+  position: absolute;
+  border-color: #9050B7 transparent transparent #9050B7;
+  left: -65vw;
+  top: -30vh;
+}
+
+.vector4 {
+  width: 470vw;
+  height: 300vh;
+  border-radius: 0px 0px 100% 0px;
+  position: absolute;
+  border-color: transparent #9050B7 #9050B7 transparent;
+  right: -5vw;
+  top: -80vh;
+}
+
+.vector5 {
+  width: 210vw;
+  height: 400vh;
+  border-radius: 100% 0px 0px 0px;
+  position: absolute;
+  border-color: #9050B7 transparent transparent #9050B7;
+  top: -20vh;
+  left: -5vw;
+}
+
+.vector6 {
+  width: 50vw;
+  height: 150vh;
+  border-radius: 0px 0px 100% 0px;
+  position: absolute;
+  border-color: transparent #9050B7 #9050B7 transparent;
+
+  right: -15vw;
+  bottom: -15vh;
+}
+
+
+
+
+/* Navbar */
+
+
+/* Hero */
+.title {
+  width: 85%;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 110px;
+  line-height: 80px;
+
+  background: linear-gradient(91.85deg, #cca3d6 -7.75%, #f9e3f8 47.47%, #996e96 107.63%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  cursor: default;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.title:hover {
+  /* Neon text */
+  text-shadow: 1px 1px 12px #ebebeb;
+}
+
+
+
+@keyframes titleTilt {
+  0% {text-shadow: none;}
+  5% {text-shadow: 1px 1px 12px #ebebeb;}
+  10% {text-shadow: none;}
+  15% {text-shadow: 1px 1px 12px #ebebeb;}
+  20% {text-shadow: none;}
+  25% {text-shadow: 1px 1px 12px #ebebeb;}
+  30% {text-shadow: none;}
+  35% {text-shadow: 1px 1px 12px #ebebeb;}
+  40% {text-shadow: none;}
+  45% {text-shadow: 1px 1px 12px #ebebeb;}
+  50% {text-shadow: none;}
+  55% {text-shadow: 1px 1px 12px #ebebeb;}
+  60% {text-shadow: none;}
+  65% {text-shadow: 1px 1px 12px #ebebeb;}
+  70% {text-shadow: none;}
+  75% {text-shadow: 1px 1px 12px #ebebeb;}
+  80% {text-shadow: none;}
+  85% {text-shadow: 1px 1px 12px #ebebeb;}
+  90% {text-shadow: none;}
+  95% {text-shadow: 1px 1px 12px #ebebeb;}
+  100% {text-shadow: none;}
+}
+
+.titleTiltAnim {
+  animation: titleTilt 40s infinite;
+}
+
+
+
+.desc {
+  text-align: center;
+  width: 25%;
+  position: absolute;
+  /* font-family: 'Times New Roman', Times, serif; */
+  font-family: "Nunito Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 30px;
+
+  background: linear-gradient(91.85deg, #d3d6a3 -7.75%, #f7ff56 47.47%, #bec57a 107.63%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  cursor: default;
+
+  text-shadow: 1px 1px 12px yellow;
+}
+
+
+
+/* Contacts */
+.titleContact {
+  width: 85%;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 80px;
+
+  background: linear-gradient(91.85deg, #cca3d6 -7.75%, #f9e3f8 47.47%, #996e96 107.63%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  cursor: default;
+
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+@media only screen and (max-width: 640px) {
+  .title {
+    font-size: 50px;
+    line-height: 40px;
+  }
+
+  .titleContact {
+    font-size: 50px;
+    line-height: 40px;
+  }
+
+  .desc {
+    font-size: 16px;
+    line-height: 15px;
+  }
+
+  body {
+    position: fixed;
+  }
+}
